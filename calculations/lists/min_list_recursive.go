@@ -4,8 +4,20 @@ package lists
 // Wenn die Liste leer ist, wird 0 zurückgegeben.
 // ZUSATZBEDINGUNG: Diese Funktion darf keine Schleife verwenden.
 func MinListRecursive(nums []int) int {
-	// TODO
-	return 0
+	if len(nums) == 0 {
+		return 0
+	}
+	if len(nums) == 1 {
+		return nums[0]
+	}
+	r := nums[0]
+	t := MinListRecursive(nums[1:])
+
+	if r < t {
+		return r
+	}
+	return t
+
 }
 
 // REMARKS
